@@ -11,6 +11,8 @@ import { StructuralDirectivesComponent } from './structural-directives/structura
 import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
 import { CityPipe } from './pipes/city.pipe';
 import { SummaryPipe } from './pipes/summary.pipe';
+import { NewPostListComponent } from './new-post-list/new-post-list.component';
+import { PostService } from './services/post.service';
 
 @NgModule({
   declarations: [
@@ -22,14 +24,17 @@ import { SummaryPipe } from './pipes/summary.pipe';
     StructuralDirectivesComponent,
     PipesDemoComponent,
     CityPipe,
-    SummaryPipe
+    SummaryPipe,
+    NewPostListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [
+  //  PostService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -11,5 +11,4 @@ export class SummaryPipe implements PipeTransform {
     } 
     return value.substring(0,length);
   }
-
 }

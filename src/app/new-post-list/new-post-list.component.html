@@ -1,0 +1,14 @@
+<button (click)="addNewPost()">Create Post</button>
+
+<table>
+    <tr>
+        <th>id</th>
+        <th>post</th>
+        <th>Date</th>
+    </tr>
+    <tr *ngFor="let post of posts">
+        <td>{{ post.id }}</td>
+        <td>{{ post.name }}</td>
+        <td><span *ngIf="post.date else nodate">{{post.date}}</span><ng-template #nodate><span>{{'No date'}}</span></ng-template></td>
+    </tr>
+</table>
