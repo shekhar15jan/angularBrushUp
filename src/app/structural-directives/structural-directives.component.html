@@ -1,0 +1,57 @@
+<p [ngStyle]="{
+    color: isStyled? 'red': 'green',
+    fontStyle: isStyled? 'italic': 'normal',
+    fontWeight: isStyled? 'bold': 'normal'
+}">Angular Life Cycle Hooks</p>
+<span [style.colo]="'green'">Add to the List</span><br>
+ <input type="text" [(ngModel)]="langName" placeholder="Enter Name" />
+ <input type="text" [(ngModel)]="langVersion" placeholder="Enter Version" />
+ <input type="checkbox" [(ngModel)]="isFrontend"/><span> Is FrontEnd Language</span>
+ <button (click)="addToList()">Add Values</button>
+<ul>
+    <li *ngFor="let hook of lifeCycleHooksArray">{{hook}}</li>
+    
+</ul>
+<ul>
+    <li *ngFor = "let obj1 of objectArray"> {{ obj1 | json }}</li>
+</ul>
+<table *ngIf="objectArray.length>0" [border]="'1'">
+<thead>
+    <tr><th>Sr.</th>
+        <th>Language Name</th>
+        <th>Language Version</th>
+        <th>Language Type</th>
+        <th>Action</th>
+    </tr>
+</thead>
+    <tbody>
+    <tr *ngFor="let obj of objectArray; let i = index" 
+    [ngClass]="{evenRows: i%2==0, oddRows: i%2!=0}">
+        <td>{{i+1}}</td>
+        <td [style.color]="'Orange'">
+            {{obj.name}}
+        </td>
+        <td [style.color]="'blue'">
+            {{obj['version']}}
+        </td>
+        <td [class.front-end-lang]="obj.frontend"><span *ngIf='obj.frontend else backend'>Frontend Language</span> <ng-template #backend><span [class.back-end-lang]="!obj.frontend">Backend Language</span></ng-template></td>
+        <td><button (click)="removeFromList(i)">Delete</button></td>
+    </tr>
+</tbody>
+</table>
+<div>
+    <button (click)="selectMyCase('step1')">Step1</button>
+    <button (click)="selectMyCase('step2')">Step2</button>
+    <button (click)="selectMyCase('step3')">Step3</button>
+    <button (click)="selectMyCase('step4')">Step4</button>
+    <button (click)="selectMyCase('step5')">Step5</button>
+</div>
+<div [ngSwitch]="selectedStep">
+    <div *ngSwitchCase="'step1'">Step1 is selected</div>
+    <div *ngSwithchCase="'step2'">Step2 is selected</div>
+    <div *ngSwitchCase="'step3'">Step3 is selected</div>
+    <div *ngSwitchCase="'step4'">Step4 is selected</div>
+    <div *ngSwitchCase="'step5'">Step5 is selected</div>
+    <div *ngSwitchDefault>default step is selected</div>
+</div>
+

@@ -1,0 +1,14 @@
+<div class="task-one">
+ <h1>{{formTitle}}</h1>
+<input type="text" placeholder="Post Title" [(ngModel)]="postTitle" /><br/>
+<textarea placeholder="Post Details" [(ngModel)]="postContent" rows="5"></textarea><br/>
+<input type="text" placeholder="Post Image Url" [(ngModel)]="postImageUrl" /><br/>
+<input type="text" placeholder="Post URL" [(ngModel)]="postUrl" /><br/>
+<input type="checkbox" [(ngModel)]="isChecked" />Apply Background
+</div>
+<div class="task-one">
+<h1><span [class.bg-color]="isChecked">{{postTitle}}</span></h1>
+<p>{{postContent}}</p>
+<img [src]="postImageUrl" [style.display]="postImageUrl!=''?'inline':'none'" alt="{{postTitle}}" class="img" /><br/>
+<a [href]="postUrl" [style.display]="postUrl!=''?'block':'none'" target="_blank">Read More</a>
+</div>

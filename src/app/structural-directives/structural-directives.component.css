@@ -1,0 +1,18 @@
+.front-end-lang{
+ background-color: green;
+ color: #FFF;
+}
+.back-end-lang{
+    background-color: purple;
+    color: #FFF;
+   }
+.evenRows{
+    background-color: green;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+}
+.oddRows{
+    background-color: purple;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: capitalize;
+}

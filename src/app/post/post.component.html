@@ -1,0 +1,3 @@
+<p>post works! message is : {{childMessage}}</p>
+<app-post-list [postName]="title" (messageEvent) = "receiveMessage($event)"></app-post-list>
+<p>Output from child using event Emmiter is {{childOutput}}</p>
