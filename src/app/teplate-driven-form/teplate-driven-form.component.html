@@ -1,0 +1,49 @@
+<div class="container ml-5">
+    <h1>Template Driven Form</h1>
+    <div class="form-area">
+        <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text"
+                 name="fullName"
+                 class="form-control"
+                 ngModel
+                 #fullName='ngModel'
+                 (change)="getFullName(fullName)"
+                 [ngClass]="{'is-invalid': fullName.invalid && fullName.touched}"
+                 required
+                 minlength="5"
+                 maxlength="25">
+                 <div *ngIf="fullName.errors!=null && fullName.errors['required']">
+                    <div class="alert alert-danger" *ngIf="fullName.invalid && fullName.touched">Please Enter Full Name</div>
+                 </div>
+                 <div *ngIf="fullName.errors!=null && fullName.errors['minlength']">
+                    <div class="alert alert-danger" *ngIf="fullName.invalid && fullName.touched">Name shoud have atleast 5 letters</div>
+                 </div>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" name="emailId" class="form-control" ngModel #emailId="ngModel" (change)="getEmailId(emailId)" required pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                [ngClass]="{'is-invalid': emailId.invalid && emailId.touched}">
+                <div *ngIf="emailId.errors!=null && emailId.errors['required']">
+                    <div class="alert alert-danger" *ngIf="emailId.invalid && emailId.touched">Please Enter Email</div>
+                </div>
+                <div *ngIf="emailId.errors!=null && emailId.errors['pattern']">
+                    <div class="alert alert-danger" *ngIf="emailId.invalid && emailId.touched">Invalid Email address</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Message</label>
+                <textarea name="message" cols="30" rows="10" class="form-control" ngModel #message="ngModel" (change)="getMessage(message)" required
+                [ngClass]="{'is-invalid':message.invalid && message.touched}"
+                minlength="10" maxlength="200"
+                ></textarea>
+                <div *ngIf="{'is-valid':message.invalid && message.touched}">
+                    <div class="alert alert-danger" *ngIf="message.invalid && message.touched">Message should be provided</div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Submit</button>
+            <button type="reset" class="btn btn-danger">Reset</button>
+        </form>
+    </div>
+</div>

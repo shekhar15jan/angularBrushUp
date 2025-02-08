@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule} from '@Angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@Angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -13,6 +13,8 @@ import { CityPipe } from './pipes/city.pipe';
 import { SummaryPipe } from './pipes/summary.pipe';
 import { NewPostListComponent } from './new-post-list/new-post-list.component';
 import { PostService } from './services/post.service';
+import { TeplateDrivenFormComponent } from './teplate-driven-form/teplate-driven-form.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,15 @@ import { PostService } from './services/post.service';
     PipesDemoComponent,
     CityPipe,
     SummaryPipe,
-    NewPostListComponent
+    NewPostListComponent,
+    TeplateDrivenFormComponent,
+    ReactiveFormsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
   //  PostService
