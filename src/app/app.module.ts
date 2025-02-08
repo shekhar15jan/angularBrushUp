@@ -8,6 +8,9 @@ import { PostComponent } from './post/post.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { TaskOneComponent } from './task-one/task-one.component';
 import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
+import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
+import { CityPipe } from './pipes/city.pipe';
+import { SummaryPipe } from './pipes/summary.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { StructuralDirectivesComponent } from './structural-directives/structura
     PostComponent,
     PostListComponent,
     TaskOneComponent,
-    StructuralDirectivesComponent
+    StructuralDirectivesComponent,
+    PipesDemoComponent,
+    CityPipe,
+    SummaryPipe
   ],
   imports: [
     BrowserModule,

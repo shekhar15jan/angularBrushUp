@@ -1,0 +1,22 @@
+<p>Original Text => {{title}}</p>
+<p>{{title}}=> Upper Case => {{title|uppercase}}</p>
+<p>{{title}}=> Lower Case => {{title|lowercase}}</p>
+<p>{{count}}=> Number Pipe => {{count|number}}</p>
+<p>{{per}}=> Number Pipe rount (2 decimals) => {{per | number: '0.2-2'}}</p>
+<p>{{per}}=> Number Pipe rount (3 digits) => {{per | number: '3.0-10'}}</p>
+<p>{{count}}=> Currency Pipe (Rupees) => {{count|currency:'INR'}}</p>
+<p>{{count}}=> Currency Pipe (Doller) => {{count|currency}}</p>
+<p>{{count}}=> Currency Pipe (Paund) => {{count|currency:'GBP'}}</p>
+<p>{{count}}=> Currency Pipe (Australin Doller) => {{count|currency:'AUD'}}</p>
+<p>{{count}}=> Currency Pipe (Euro ) => {{count|currency:'EUR'}}</p>
+<p>{{count}}=> Currency Pipe (JPY) => {{count|currency:'JPY'}}</p>
+<p>{{count}}=> Currency Pipe (CNY) => {{count|currency:'CNY'}}</p>
+<p>{{count}}=> Currency Pipe (USD:false:'0.2-2' ) => {{count|currency:'USD' : false : '0.2-2'}}</p>
+<p>{{todayDate}}=> Short Date Pipe (Date: 'short' ) => {{todayDate|date: 'short'}}</p>
+<p>{{todayDate}}=> Short Date Pipe (Date: 'dd-mm-yyyy' ) => {{todayDate|date: 'dd-mm-yyyy'}}</p>
+<p>{{post}}=> JSON Pipe () => {{post|json}}</p>
+<p>{{per}}=> percent Pipe (percent) => {{per|percent: "0.2-2"}}</p>
+<p>{{myArray}}=> slice Pipe (slice) => {{myArray|slice: 0:3}}</p>
+<!--custom pipe-->
+<p>{{myCity}} => transformed with pipe (city) =>{{myCity | city}}</p>
+<P>{{paraText}} => transformed with pipe (summary) =>{{paraText | summary: 50}}</P>
