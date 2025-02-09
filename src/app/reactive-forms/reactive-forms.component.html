@@ -1,1 +1,29 @@
-<p>reactive-forms works!</p>
+<div class="container ml-5">
+    <h2>Reactive Forms</h2>
+    <div class="form-area">
+        <form [formGroup]='form1'>
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" 
+                class="form-control"
+                name="fullName"
+                id="fullName"
+                formControlName="fullName"
+                required>
+                <div class="alert alert-danger" *ngIf="fullName.touched && fullName.invalid">
+                        <div *ngIf="fullName.errors?.required">Full Name Required</div>
+                    </div>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" placeholder="Enter Email Id" class="form-control" name="emailId" formControlName='email'>
+            </div>
+            <div class="form-group">
+                <label>Message</label>
+                <textarea name="message" placeholder="Enter your messge" cols="30" rows="10" class="form-control" formControlName='message'></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="reset" class="btn btn-danger">Reset</button>
+        </form>
+    </div>
+</div>
